@@ -3,9 +3,11 @@ from selenium.webdriver.common.by import By
 from .Pages.login_page import LoginPage
 
 
-def go_to_login_page(browser):
-    login_link = browser.find_element(By.CSS_SELECTOR, "#login_link")
-    login_link.click()
+def go_to_login_page(self):
+   link = self.browser.find_element(By.CSS_SELECTOR, "#login_link")
+   link.click()
+   alert = self.browser.switch_to.alert
+   alert.accept()
 
 def test_guest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com"
