@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators():
+    MAIN_PAGE_LINK = "https://selenium1py.pythonanywhere.com/ru/catalogue/"
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 
@@ -26,3 +27,9 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    SEE_BASKET_BTN = (By.CSS_SELECTOR, "span.btn-group > a.btn.btn-default")
+    #SEE_BASKET_BTN_INV = (By.CSS_SELECTOR, "span.btn-group > a.btn.btn-default_inc")
+
+class BasketPageLocators():
+    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p")
+    BASKET_PRODUCT = (By.CSS_SELECTOR, "div.basket-items")
