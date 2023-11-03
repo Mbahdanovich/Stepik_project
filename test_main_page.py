@@ -8,7 +8,7 @@ from .Pages.basket_page import BasketPage
 
 @pytest.mark.skip
 def go_to_login_page(self):
-   link = self.browser.find_element(By.CSS_SELECTOR, "#login_link")
+   link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
    link.click()
    alert = self.browser.switch_to.alert
    alert.accept()
@@ -17,7 +17,7 @@ def go_to_login_page(self):
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
     def test_guest_can_go_to_login_page(self, browser):
-        link = "http://selenium1py.pythonanywhere.com"
+        link = MainPageLocators.MAIN_PAGE_LINK
         page = MainPage(browser, link)
         page.open()
         page.go_to_login_page()
@@ -25,7 +25,7 @@ class TestLoginFromMainPage():
         login_page.should_be_login_page()
 
     def test_guest_should_see_login_link(self, browser):
-        link = "http://selenium1py.pythonanywhere.com/"
+        link = MainPageLocators.MAIN_PAGE_LINK
         page = MainPage(browser, link)
         page.open()
         page.should_be_login_link()
@@ -33,7 +33,7 @@ class TestLoginFromMainPage():
 
 @pytest.mark.skip
 def should_be_login_link(self):
-    assert self.is_element_present(By.CSS_SELECTOR, "#login_link"), "Login link is not presented"
+    assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
 
 
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):

@@ -20,6 +20,7 @@ class ProductPageLocators():
     PRODUCT_LINK = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     PRODUCT_PAGE_PROMO2 = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
     PRODUCT_PAGE_PROMO = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
+    PRODUCT_PAGE = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     ADD_TO_BASKET = (By.CSS_SELECTOR, "button.btn-add-to-basket")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
     #MESSAGE_PRICE_PRODUCT = (By.CSS_SELECTOR, "#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div")
